@@ -1,0 +1,50 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+/dist
+/tmp
+/out-tsc
+
+# dependencies
+node_modules
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
+
+# System Files
+.DS_Store
+Thumbs.db
+
+.angular
+/.angular/
+/.angular/
+/.angular/cache/
+/.angular/cache/14.1.1/angular-webpack/8cfbabdeaec83665f309f4efdede20db9a61d349/
+/.angular/cache/14.1.1/angular-webpack/6084b32047a53317f7a0f3156f2cc2faa985c876/
+/.angular/cache/14.1.1/angular-webpack/7076e556e79c1c60bcc9e59fb29f586e149f2ee0/
+/.angular/cache/14.1.1/angular-webpack/ba39cd2a411cd8df87ea871ca9120c7c7b091998/
+/.angular/cache/14.1.1/angular-webpack/c96b03ffea51552d127b5ce472722660d613cee6/
+/.angular/cache/14.1.1/babel-webpack/
