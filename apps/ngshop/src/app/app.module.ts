@@ -20,9 +20,11 @@ import { JwtInterceptor, UsersModule } from '@bluebits/users';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { NgxStripeModule } from 'ngx-stripe';
+import { ProdThankYouComponent } from './pages/prod-thank-you/prod-thank-you.component';
 
 
-const routes: Routes = [{ path: '', component: HomePageComponent }];
+const routes: Routes = [{ path: '', component: HomePageComponent },
+{ path:'success',component:ProdThankYouComponent}];
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ const routes: Routes = [{ path: '', component: HomePageComponent }];
     HeaderComponent,
     FooterComponent,
     NavComponent,
-    MessagesComponent
+    MessagesComponent,
+    ProdThankYouComponent
   ],
   imports: [
     BrowserModule,

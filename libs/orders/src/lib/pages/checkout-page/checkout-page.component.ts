@@ -96,6 +96,7 @@ export class CheckoutPageComponent implements OnInit, OnDestroy {
     if (this.checkoutFormGroup.invalid) {
       return;
     }
+    
 
     this.ordersService.createCheckoutSession(this.orderItems).subscribe((error)=>{
       if(error){
