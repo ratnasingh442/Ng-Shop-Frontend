@@ -10,6 +10,7 @@ import { OrderItem } from '../../models/order-item';
 import { CartService } from '../../services/cart.service';
 import { OrdersService } from '../../services/orders.service';
 
+
 @Component({
   selector: 'orders-checkout-page',
   templateUrl: './checkout-page.component.html'
@@ -20,8 +21,7 @@ export class CheckoutPageComponent implements OnInit, OnDestroy {
     private usersService: UsersService,
     private formBuilder: FormBuilder,
     private cartService: CartService,
-    private ordersService: OrdersService
-  ) {}
+    private ordersService: OrdersService) {}
   checkoutFormGroup: FormGroup;
   isSubmitted = false;
   orderItems: OrderItem[] = [];
@@ -97,6 +97,12 @@ export class CheckoutPageComponent implements OnInit, OnDestroy {
       return;
     }
 
+    this.ordersService.createCheckoutSession(this.orderItems).subscribe((error)=>{
+      if(error){
+      console.log("error to redirect to payment");
+      }
+    });
+
     const order: Order = {
       orderItems: this.orderItems,
       shippingAddress1: this.checkoutForm.street.value,
@@ -109,17 +115,8 @@ export class CheckoutPageComponent implements OnInit, OnDestroy {
       user: this.userId,
       dateOrdered: `${Date.now()}`
     };
-
-    this.ordersService.createOrder(order).subscribe(
-      () => {
-        //redirect to thank you page // payment
-        this.cartService.emptyCart();
-        this.router.navigate(['/success']);
-      },
-      () => {
-        //display some message to user
-      }
-    );
+    this.ordersService.cacheOrder(order);
+   
   }
 
   get checkoutForm() {

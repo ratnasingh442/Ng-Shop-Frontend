@@ -19,6 +19,8 @@ import { MessageService } from 'primeng/api';
 import { JwtInterceptor, UsersModule } from '@bluebits/users';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
+import { NgxStripeModule } from 'ngx-stripe';
+
 
 const routes: Routes = [{ path: '', component: HomePageComponent }];
 
@@ -37,6 +39,7 @@ const routes: Routes = [{ path: '', component: HomePageComponent }];
     HttpClientModule,
     StoreModule.forRoot({}),
     EffectsModule.forRoot([]),
+    NgxStripeModule.forRoot('pk_test_51LAxNnSCoiKScyv3Mz1taXlgRtKYhhTQXhR601HarhTftUqS3nIzHB2IshtgAVrga2Yinq2Sr8f0FzFTmpkdtTTQ00nXH77VsT'),
     ProductsModule,
     AccordionModule,
     BrowserAnimationsModule,
